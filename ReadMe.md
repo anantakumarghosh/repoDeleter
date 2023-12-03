@@ -1,16 +1,33 @@
 # Batch Repository deleter
 
 ## Steps
-run the below commands   
-run ```npm i```  
-```git clone <repository-url>```  
-cd project-directory  
-run the below command in project root directory  
-```gh repo list <your-user-name> --json name --limit 100 > allrepolist.json```  
+Run the below commands to setup Batch Repo Deleter.   
 
-Remove repositories from json that you don't wish to delete   
+```terminal
+git clone https://github.com/anantakumarghosh/repoDeleter.git
+cd repoDeleter
+npm i
+gh repo list <your-user-name> --json name --limit 100 > allrepolist.json
+```
 
-run the below command   
+allrepolist.json containing all repos will get generated.
+
+```JSON
+[
+    {
+        "name": "repo1-delete"
+    },
+    {
+        "name": "repo2-delete"
+    },
+    {},
+    {}
+]
+```
+
+Remove repositories from allrepolist.json that you don't wish to delete   
+
+Finally run the below command to delete all repositories listed in allrepolist.json  
 
 ```npm run delete```
 
